@@ -1,0 +1,51 @@
+.uploadArea{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width:100%;
+    padding-top: 5%;
+    color: black;
+    .titleDescription{
+      padding-bottom: 2%;
+
+      .titleDescriptionText{
+        font-size: 200%;
+        font-weight: bold;
+      }
+      .titleDescriptionSubtext{
+        font-size: smaller;
+      }
+    }
+    .previewImg{
+      width: 50%;
+      height: 50%;
+      padding: 2%;
+    }
+
+    .SubmitButtonContainer{
+      .SubmitButton{
+        color: #ffffff;
+        border-radius: 50px;
+        padding: 15px;
+        font-weight: bold;
+        font-size: large;
+        border: 1px solid #ffffff;
+        background-color: #000000;
+        cursor: pointer;
+        margin-bottom: 5%;
+      }
+      .SubmitButton:hover{
+        transition: 0.5s;
+        border: 1px solid #000000;
+        background-color: #ffffff;
+        color: #000000;
+      }
+      
+      .SubmitButton:active{
+        transition: 0.2s;
+        border: 1px solid #ffffff;
+        background-color: #000000;
+        color: #ffffff;
+      }
+    }
+  }

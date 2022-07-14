@@ -2,10 +2,12 @@ import axios from 'axios';
 import './FileUploader.scss';
 import React, {useState} from 'react';
 
-var API_ENDPOINT_FOR_PNG = ' https://l9b2ti151b.execute-api.us-east-1.amazonaws.com/Test/getsignedurl';
-var API_ENDPOINT_FOR_JPG = 'https://jjkfm5hik6.execute-api.us-east-1.amazonaws.com/Test/getsignedurlforjpg';
-var LAMBDA_ENDPOINT = 'https://tzslqv4jlnh2gk6373thnvxecm0oahdr.lambda-url.us-east-1.on.aws/';
+var API_ENDPOINT_FOR_PNG = 'API_ENDPOINT_FOR_PNG';
+var API_ENDPOINT_FOR_JPG = 'API_ENDPOINT_FOR_JPG';
+var LAMBDA_ENDPOINT = 'LAMBDA_ENDPOINT';
 var API_ENDPOINT;
+var Authorization;
+var token;
 
 function FileUploader({setisSubmitted, setLabels, setIsLoading}){
 	const [selectedFile, setSelectedFile] = useState();
@@ -56,7 +58,7 @@ function FileUploader({setisSubmitted, setLabels, setIsLoading}){
     const s3Upload = await axios(API_ENDPOINT, {
       method: 'GET',
       headers: {
-        'authorizationToken': 'allow' //the token is a variable which holds the token
+        Authorization: token //the token is a variable which holds the token
       }
     })
     console.log('Response: ', s3Upload);
